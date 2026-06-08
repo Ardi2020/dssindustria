@@ -1,0 +1,211 @@
+// DSS Industria — All content & product data
+window.DSS = {
+
+  nav: {
+    links: [
+      { id: 'industri',   label: 'Industri' },
+      { id: 'healthcare', label: 'Healthcare' },
+      { id: 'kemampuan',  label: 'Kemampuan' },
+      { id: 'cara-kerja', label: 'Cara Kerja' },
+      { id: 'harga',      label: 'Harga' },
+    ],
+    waUrl: 'https://wa.me/628218417551',
+    companyUrl: 'https://digdayasolusi.co.id',
+  },
+
+  hero: {
+    eyebrow: 'PRODUK SIAP PAKAI · INDUSTRI & HEALTHCARE',
+    h1: 'AI Agent & Aplikasi yang Bisa Anda Coba Hari Ini.',
+    sub: 'DSS Industria — lini produk dari PT Digdaya Solusi Sistem. Sembilan aplikasi untuk industri manufaktur dan healthcare: dari pemilihan supplier, penjadwalan produksi, sampai dokumentasi medis. Coba yang LIVE sekarang, atau jadwalkan demo.',
+    ctaPrimary:   { label: 'Coba Demo Live Gratis',    url: 'https://dss-industria.streamlit.app' },
+    ctaSecondary: { label: 'Jadwalkan Demo 30 Menit',  url: 'https://wa.me/628218417551' },
+    trustStrip: '9 aplikasi selesai dibangun · 1 LIVE bisa dicoba sekarang · 2 vertical: Industri & Healthcare · Setiap langkah agent bisa diaudit',
+    traceLines: [
+      { role: 'PLANNER',   text: 'Memecah tugas: evaluasi 5 supplier',      color: '#60A5FA', tick: false },
+      { role: 'EXECUTOR',  text: 'Hitung bobot kriteria (AHP) ........ ✓',  color: '#FBBF24', tick: true  },
+      { role: 'EXECUTOR',  text: 'Ranking alternatif (TOPSIS) ........ ✓',  color: '#FBBF24', tick: true  },
+      { role: 'VALIDATOR', text: 'Cek konsistensi (CR 0.04<0.10) ..... ✓', color: '#2DD4BF', tick: true  },
+      { role: 'OUTPUT',    text: 'Rekomendasi siap → laporan PDF',           color: '#4ADE80', tick: false },
+    ],
+  },
+
+  pendekatan: {
+    label: 'KENAPA PRODUK KAMI BEDA',
+    h2: 'Bukan Chatbot. Sistem Multi-Agent yang Bisa Diaudit.',
+    cards: [
+      { role: 'Planner',   icon: '◆', color: '#2563EB', desc: 'Memecah tugas jadi langkah yang bisa dieksekusi.' },
+      { role: 'Executor',  icon: '⚙', color: '#F59E0B', desc: 'Menjalankan perhitungan & aksi: AHP/TOPSIS, NPV/IRR, optimasi rute, OCR, vision.' },
+      { role: 'Validator', icon: '✓', color: '#14B8A6', desc: 'Memeriksa hasil sebelum sampai ke Anda. Gagal cek = diulang.' },
+    ],
+    footer: 'Metode teruji (AHP, TOPSIS, NPV, IRR, VRP, CP-SAT) jadi tools · observability penuh · eval ≥10 test case per agent.',
+  },
+
+  industri: {
+    label: 'VERTICAL 01 — INDUSTRI & MANUFAKTUR',
+    h2: 'Rantai Keputusan Pabrik Anda, Dari Hulu ke Hilir',
+    intro: 'Lima tool keputusan + satu sistem inventory terintegrasi. Sudah selesai dibangun — coba yang LIVE, atau minta demo & tonton videonya.',
+
+    flagship: {
+      id: 'supplier-selection',
+      badge: '🟢 LIVE — Coba Sekarang',
+      badgeType: 'live',
+      name: 'DSS Supplier Selection',
+      tagline: 'Siapa supplier terbaik untuk bahan baku Anda?',
+      description: 'Evaluasi supplier multi-kriteria (AHP-TOPSIS): setup kriteria → perbandingan berpasangan → ranking objektif → laporan PDF. Berhenti memilih supplier berdasarkan \u200Bfeeling.',
+      method: 'Analytic Hierarchy Process (AHP) untuk pembobotan kriteria + Technique for Order of Preference by Similarity to Ideal Solution (TOPSIS) untuk ranking alternatif. Output: laporan PDF otomatis, konsistensi rasio < 0.10.',
+      price: 'Rp 8–15 juta',
+      timeline: '1–2 minggu',
+      liveUrl: 'https://dss-industria.streamlit.app',
+      waUrl: 'https://wa.me/628218417551',
+    },
+
+    tools: [
+      {
+        id: 'pricing-margin',
+        seq: '01',
+        name: 'DSS Pricing & Margin',
+        tagline: 'Berapa harga jual yang masih untung?',
+        description: 'Activity-Based Costing + Break-Even + sensitivitas. Banyak UMKM diam-diam rugi per SKU.',
+        method: 'Activity-Based Costing (ABC) untuk alokasi biaya per SKU, Break-Even Analysis, Sensitivity Analysis untuk simulasi margin di berbagai harga jual.',
+        price: 'Rp 8–15 juta', timeline: '1–2 minggu',
+        waUrl: 'https://wa.me/628218417551',
+      },
+      {
+        id: 'production-scheduling',
+        seq: '02',
+        name: 'DSS Production Scheduling',
+        tagline: 'Order mana dikerjakan duluan, di mesin mana?',
+        description: '4 algoritma (SPT/EDD/Johnson/CP-SAT) + Gantt. Takt time pabrik otomotif untuk UMKM.',
+        method: 'Shortest Processing Time (SPT), Earliest Due Date (EDD), Johnson\'s Algorithm, CP-SAT Solver dari Google OR-Tools. Output: Gantt chart interaktif per mesin.',
+        price: 'Rp 8–15 juta', timeline: '1–2 minggu',
+        waUrl: 'https://wa.me/628218417551',
+      },
+      {
+        id: 'distribusi',
+        seq: '03',
+        name: 'DSS Distribusi',
+        tagline: 'Rute kirim paling efisien untuk armada Anda?',
+        description: 'Optimasi rute 2–5 mobil (TSP/VRP) di peta. Hemat BBM & jam sopir.',
+        method: 'Travelling Salesman Problem (TSP) untuk satu kendaraan, Vehicle Routing Problem (VRP) untuk armada 2–5 unit. Visualisasi rute interaktif di peta.',
+        price: 'Rp 8–15 juta', timeline: '1–2 minggu',
+        waUrl: 'https://wa.me/628218417551',
+      },
+      {
+        id: 'investment',
+        seq: '04',
+        name: 'DSS Investment Decision',
+        tagline: 'Beli mesin baru — worth it?',
+        description: 'NPV, IRR, Payback + sensitivitas. Keputusan kapital ratusan juta jangan pakai insting.',
+        method: 'Net Present Value (NPV), Internal Rate of Return (IRR), Payback Period, Sensitivity Analysis untuk variasi asumsi (harga bahan baku, utilisasi, inflasi).',
+        price: 'Rp 8–15 juta', timeline: '1–2 minggu',
+        waUrl: 'https://wa.me/628218417551',
+      },
+    ],
+
+    integrated: {
+      id: 'inventory-industria',
+      badge: '✅ Siap Demo — Janji Temu',
+      badgeType: 'demo',
+      name: 'Inventory Industria',
+      tagline: 'Stok terintegrasi: web untuk manajer, mobile untuk operator, AI baca foto barang.',
+      description: 'Sistem inventory end-to-end dengan web dashboard untuk manajer, aplikasi mobile untuk operator gudang, dan AI vision untuk input barang otomatis via foto. Sinkron real-time.',
+      features: [
+        'Foto barang → otomatis terklasifikasi & tercatat',
+        'Forecast kebutuhan & rekomendasi reorder',
+        'Alert anomali: stockout & dead stock sebelum terjadi',
+      ],
+      method: 'Computer Vision untuk klasifikasi & pencatatan barang via foto, Time-series Forecasting untuk demand planning, Anomaly Detection untuk stockout/dead stock.',
+      price: 'Rp 50–100 juta',
+      timeline: 'web + mobile + AI',
+      waUrl: 'https://wa.me/628218417551',
+    },
+  },
+
+  healthcare: {
+    label: 'VERTICAL 02 — HEALTHCARE',
+    h2: 'Kembalikan Waktu Dokter ke Pasien, Bukan ke Ketikan',
+    intro: 'AI agent untuk RS & klinik — human-in-the-loop ketat & patuh UU Pelindungan Data Pribadi.',
+    pilotCta: 'Jadi RS/klinik pilot pertama — harga pilot & pendampingan intensif',
+    waUrl: 'https://wa.me/628218417551',
+    privacy: 'De-identifikasi data pasien sebelum pemrosesan AI · opsi LLM on-premise · audit trail penuh · patuh UU PDP. Semua solusi kami pendukung keputusan klinis & otomasi alur kerja — keputusan medis selalu di tangan dokter.',
+    products: [
+      {
+        id: 'scribe-pro',
+        badge: '✅ Membuka Pilot',
+        badgeType: 'pilot',
+        name: 'Scribe Medis Pro',
+        tagline: 'Dokumentasi konsultasi otomatis, on-premise.',
+        description: 'Perekam khusus → transkrip → draft SOAP → dokter validasi & tanda tangan. Data tak keluar jaringan RS (opsi LLM on-prem).',
+        chip: 'Target: dokumentasi 5–8 menit → di bawah 1 menit/pasien',
+        method: 'Speech-to-Text lokal (dioptimasi untuk istilah medis Indonesia) → LLM on-premise → SOAP formatting → dokter review & tanda tangan digital. Data tidak meninggalkan jaringan RS.',
+        waUrl: 'https://wa.me/628218417551',
+      },
+      {
+        id: 'scribe-lite',
+        badge: '✅ Membuka Pilot',
+        badgeType: 'pilot',
+        name: 'Scribe Medis Lite',
+        tagline: 'Versi cloud: cukup laptop + mikrofon USB.',
+        description: 'Onboarding 2 minggu, trial 14 hari saat rilis cloud.',
+        method: 'Speech-to-Text cloud → LLM → SOAP draft → review dokter. De-identifikasi data pasien sebelum dikirim ke cloud. Cocok untuk klinik & praktik mandiri.',
+        waUrl: 'https://wa.me/628218417551',
+      },
+      {
+        id: 'jadwal-ai',
+        badge: '✅ Membuka Pilot',
+        badgeType: 'pilot',
+        name: 'JadwalAI',
+        tagline: 'Agent booking janji temu via WhatsApp 24/7.',
+        description: 'Pasien chat → cari slot → konfirmasi → reminder → prediksi no-show.',
+        chip: 'Target: no-show 18–32% → 8–14%',
+        method: 'LangGraph multi-agent + WhatsApp Business API + sinkronisasi kalender dokter real-time + ML model prediksi no-show. Human-in-the-loop untuk kasus edge.',
+        waUrl: 'https://wa.me/628218417551',
+        fullWidth: true,
+      },
+    ],
+  },
+
+  capabilities: [
+    { icon: 'ORK', title: 'Orkestrasi Multi-Agent', detail: 'LangGraph', color: '#2563EB' },
+    { icon: 'DSN', title: 'Mesin Keputusan Teruji', detail: 'AHP/TOPSIS, NPV/IRR, VRP, CP-SAT, ABC/BEP', color: '#F59E0B' },
+    { icon: 'APP', title: 'Aplikasi Web & Mobile', detail: 'Sinkron real-time, offline-capable', color: '#8B5CF6' },
+    { icon: 'VIS', title: 'Vision & OCR', detail: 'Klasifikasi & pencatatan barang via foto', color: '#14B8A6' },
+    { icon: 'STT', title: 'Speech-to-Text Indonesia', detail: 'Istilah medis lokal teroptimasi', color: '#EC4899' },
+    { icon: 'FCT', title: 'Forecasting & Deteksi Anomali', detail: 'Prediksi kebutuhan & alert dini', color: '#F97316' },
+    { icon: 'PRI', title: 'Privacy-First Engineering', detail: 'On-prem LLM, patuh UU PDP', color: '#22C55E' },
+    { icon: 'OBS', title: 'Observability & Eval', detail: 'Watch agent think — setiap langkah bisa diaudit', color: '#64748B' },
+  ],
+
+  howItWorks: [
+    { step: '01', title: 'Coba / Lihat Demo',      desc: 'Coba yang LIVE, atau jadwalkan demo 30 menit. Gratis.' },
+    { step: '02', title: 'Sesuaikan ke Data Anda', desc: 'Kami konfigurasi dengan data & alur kerja nyata Anda.' },
+    { step: '03', title: 'Pasang & Latih Tim',     desc: 'Implementasi 1–2 minggu (tool) atau 6–16 minggu (terintegrasi).' },
+    { step: '04', title: 'Pakai & Dampingi',       desc: 'Evaluasi terukur, support berkelanjutan.' },
+  ],
+
+  pricing: [
+    { tier: 1, type: 'Productized Tool',      useFor: 'Satu keputusan spesifik, web-based',    price: 'Rp 8–15 jt',                       timeline: '1–2 minggu',  highlight: false },
+    { tier: 2, type: 'Integrated Solution',   useFor: 'Web + mobile, multi-role',              price: 'Rp 35–75 jt',                      timeline: '6–10 minggu', highlight: false },
+    { tier: 3, type: 'AI-Powered Solution',   useFor: '+ vision/voice/forecasting/agent',      price: 'Rp 75–150 jt',                     timeline: '10–16 minggu',highlight: true  },
+    { tier: 4, type: 'Enterprise / IoT',      useFor: 'Full stack + hardware, multi-site',     price: 'Rp 150–300 jt+',                   timeline: '4–6 bulan',   highlight: false },
+    { tier: 5, type: 'Strategic Consulting',  useFor: 'Audit, blueprint, vendor selection',    price: 'Rp 2,5 jt/jam\natau Rp 15–50 jt/proyek', timeline: 'Variabel', highlight: false },
+  ],
+
+  footer: {
+    industri: [
+      'DSS Supplier Selection', 'DSS Pricing & Margin',
+      'DSS Production Scheduling', 'DSS Distribusi',
+      'DSS Investment Decision', 'Inventory Industria',
+    ],
+    healthcare: ['Scribe Medis Pro', 'Scribe Medis Lite', 'JadwalAI'],
+    contact: {
+      wa: '+62 821-8417-551',
+      waUrl: 'https://wa.me/628218417551',
+      email: 'kontak.dssindustria@gmail.com',
+      location: 'Jakarta, Indonesia',
+      hours: 'Senin–Jumat 08.00–17.00\nSabtu 09.00–13.00 WIB',
+    },
+    legal: '© 2026 PT Digdaya Solusi Sistem · Brand: DSS Industria · Solusi healthcare kami adalah pendukung keputusan klinis, bukan alat diagnosis dan bukan pengganti tenaga medis.',
+    companyUrl: 'https://digdayasolusi.co.id',
+  },
+};
