@@ -58,6 +58,7 @@ function BrowserMockup() {
 
 function ToolCard({ product, onOpen }) {
   const [hovered, setHovered] = React.useState(false);
+  const u = window.DSS.ui.cards;
   return (
     <div
       className="card"
@@ -71,11 +72,10 @@ function ToolCard({ product, onOpen }) {
       }}
     >
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 12 }}>
-        <span className="badge badge-demo">✅ Siap Demo</span>
-        <span style={{
-          fontFamily: 'var(--font-mono)', fontSize: 13, fontWeight: 700,
-          color: 'var(--border)',
-        }}>{product.seq}</span>
+        <span className="badge badge-demo">{u.siapDemo}</span>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, fontWeight: 700, color: 'var(--border)' }}>
+          {product.seq}
+        </span>
       </div>
       <h3 style={{ fontFamily: 'var(--font-head)', fontSize: 16, fontWeight: 700, color: 'var(--navy)', marginBottom: 6 }}>
         {product.name}
@@ -89,11 +89,11 @@ function ToolCard({ product, onOpen }) {
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
         <button onClick={() => onOpen(product)} className="btn btn-outline btn-sm"
           style={{ flex: 1, justifyContent: 'center' }}>
-          Lihat Detail
+          {u.detail}
         </button>
         <button onClick={() => onOpen(product)} className="btn btn-outline btn-sm"
           style={{ flex: 1, justifyContent: 'center', color: 'var(--body)', fontSize: 12 }}>
-          ▶ Video Demo
+          {u.videoDemo}
         </button>
       </div>
     </div>
@@ -102,6 +102,7 @@ function ToolCard({ product, onOpen }) {
 
 function DSSProductsIndustri() {
   const d = window.DSS.industri;
+  const u = window.DSS.ui.cards;
   const openModal = (p) => window.__dssOpenModal && window.__dssOpenModal(p);
 
   return (
@@ -112,8 +113,7 @@ function DSSProductsIndustri() {
           <div className="section-label" style={{ marginBottom: 12 }}>{d.label}</div>
           <h2 style={{
             fontFamily: 'var(--font-head)', fontSize: 'clamp(26px, 3vw, 40px)',
-            fontWeight: 700, color: 'var(--navy)', letterSpacing: '-0.02em',
-            marginBottom: 14,
+            fontWeight: 700, color: 'var(--navy)', letterSpacing: '-0.02em', marginBottom: 14,
           }}>{d.h2}</h2>
           <p style={{ fontSize: 16, color: 'var(--body)', maxWidth: 600 }}>{d.intro}</p>
         </div>
@@ -121,12 +121,10 @@ function DSSProductsIndustri() {
         {/* Flagship card */}
         <div className="reveal card" style={{
           padding: '0', marginBottom: 40, overflow: 'hidden',
-          borderLeft: '4px solid var(--amber)',
-          borderRadius: 20,
+          borderLeft: '4px solid var(--amber)', borderRadius: 20,
         }}>
           <div style={{
-            display: 'grid', gridTemplateColumns: '1fr 380px', gap: 0,
-            alignItems: 'stretch',
+            display: 'grid', gridTemplateColumns: '1fr 380px', gap: 0, alignItems: 'stretch',
           }} className="flagship-grid">
             <div style={{ padding: '36px 40px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 18 }}>
@@ -139,27 +137,15 @@ function DSSProductsIndustri() {
               <p style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--amber)', fontWeight: 600, marginBottom: 14 }}>
                 {d.flagship.tagline}
               </p>
-              <p style={{ fontSize: 15, color: 'var(--body)', lineHeight: 1.7, marginBottom: 24, maxWidth: 480 }}>
+              <p style={{ fontSize: 15, color: 'var(--body)', lineHeight: 1.7, marginBottom: 28, maxWidth: 480 }}>
                 {d.flagship.description}
               </p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 28, flexWrap: 'wrap' }}>
-                <div style={{
-                  fontFamily: 'var(--font-mono)', fontSize: 12, fontWeight: 600,
-                  color: 'var(--navy)', background: 'var(--bg-gray)',
-                  padding: '6px 12px', borderRadius: 8,
-                }}>
-                  {d.flagship.price}
-                </div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--muted)' }}>
-                  {d.flagship.timeline}
-                </div>
-              </div>
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 <a href={d.flagship.liveUrl} target="_blank" rel="noopener" className="btn btn-primary">
-                  Buka Demo Live →
+                  {u.bukaDemo}
                 </a>
                 <button onClick={() => openModal(d.flagship)} className="btn btn-outline">
-                  Lihat Detail
+                  {u.detail}
                 </button>
               </div>
             </div>
@@ -172,14 +158,12 @@ function DSSProductsIndustri() {
           </div>
         </div>
 
-        {/* Hulu→Hilir label */}
-        <div style={{
-          display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20,
-        }}>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--muted)', letterSpacing: '0.1em' }}>HULU</span>
+        {/* Hulu → Hilir label */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--muted)', letterSpacing: '0.1em' }}>{u.hulu}</span>
           <div style={{ flex: 1, height: 1, background: 'repeating-linear-gradient(90deg, var(--border) 0, var(--border) 6px, transparent 6px, transparent 12px)' }} />
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--border)" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--muted)', letterSpacing: '0.1em' }}>HILIR</span>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--muted)', letterSpacing: '0.1em' }}>{u.hilir}</span>
         </div>
 
         {/* 4 tool cards */}
@@ -194,22 +178,19 @@ function DSSProductsIndustri() {
 
         {/* Inventory Industria — full width */}
         <div className="reveal card" style={{
-          padding: '0', overflow: 'hidden',
-          borderRadius: 20,
+          padding: '0', overflow: 'hidden', borderRadius: 20,
           background: 'linear-gradient(135deg, #FFFBF3 0%, white 100%)',
         }}>
           <div style={{ padding: '36px 40px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16, flexWrap: 'wrap' }}>
               <span className="badge badge-demo">{d.integrated.badge}</span>
-              <button
-                onClick={() => openModal(d.integrated)}
+              <button onClick={() => openModal(d.integrated)}
                 style={{
                   background: 'none', border: 'none', cursor: 'pointer',
                   fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--body)',
-                  display: 'flex', alignItems: 'center', gap: 4,
-                  padding: 0,
+                  display: 'flex', alignItems: 'center', gap: 4, padding: 0,
                 }}>
-                ▶ Tonton Video Demo (2 menit)
+                {u.tonton}
               </button>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 40, alignItems: 'start' }}
@@ -231,33 +212,27 @@ function DSSProductsIndustri() {
                   ))}
                 </ul>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
-                  <div style={{
-                    fontFamily: 'var(--font-head)', fontSize: 18, fontWeight: 700, color: 'var(--navy)',
-                    background: 'var(--amber-100)', padding: '6px 14px', borderRadius: 8,
-                  }}>
-                    {d.integrated.price}
-                  </div>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--muted)' }}>{d.integrated.timeline}</span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--muted)' }}>
+                    {d.integrated.timeline}
+                  </span>
                   <button onClick={() => openModal(d.integrated)} className="btn btn-primary btn-sm">
-                    Jadwalkan Demo
+                    {u.jadwalkan}
                   </button>
                 </div>
               </div>
-              {/* Device mockup placeholder */}
+              {/* Device mockup */}
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-end', flexShrink: 0 }} className="inventory-devices">
-                {/* Laptop */}
                 <div style={{ width: 160, flexShrink: 0 }}>
                   <div style={{ background: '#1E3A5F', borderRadius: '8px 8px 0 0', padding: '8px', paddingBottom: 6 }}>
                     <div style={{ background: '#F1F5F9', borderRadius: 4, height: 90, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <span style={{ fontFamily: 'var(--font-mono)', fontSize: 9, color: 'var(--muted)', textAlign: 'center', lineHeight: 1.6 }}>
-                        Web Dashboard<br/>Manajer
+                        Web Dashboard<br/>Manager
                       </span>
                     </div>
                   </div>
                   <div style={{ background: '#334155', height: 6, borderRadius: '0 0 4px 4px' }} />
                   <div style={{ background: '#475569', height: 3, borderRadius: 2, margin: '0 10px' }} />
                 </div>
-                {/* Phone */}
                 <div style={{ width: 64, flexShrink: 0 }}>
                   <div style={{ background: '#1E3A5F', borderRadius: 10, padding: 5, paddingTop: 10, paddingBottom: 10 }}>
                     <div style={{ background: '#F1F5F9', borderRadius: 5, height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

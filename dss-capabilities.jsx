@@ -1,23 +1,21 @@
 // DSS Industria — Capabilities + How It Works
 function DSSCapabilities() {
   const caps = window.DSS.capabilities;
+  const u = window.DSS.ui.caps;
   return (
     <section id="kemampuan" style={{ background: 'var(--bg-gray)', padding: '96px 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
         <div style={{ textAlign: 'center', marginBottom: 52 }} className="reveal">
-          <div className="section-label" style={{ marginBottom: 12 }}>KEMAMPUAN TEKNIS</div>
+          <div className="section-label" style={{ marginBottom: 12 }}>{u.label}</div>
           <h2 style={{
             fontFamily: 'var(--font-head)', fontSize: 'clamp(26px, 3vw, 38px)',
             fontWeight: 700, color: 'var(--navy)', letterSpacing: '-0.02em',
-          }}>Di Balik Setiap Produk</h2>
+          }}>{u.h2}</h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}
           className="caps-grid">
           {caps.map((cap, i) => (
-            <div key={i} className="reveal card" style={{
-              padding: '22px 20px',
-              transitionDelay: `${(i % 4) * 0.07}s`,
-            }}>
+            <div key={i} className="reveal card" style={{ padding: '22px 20px', transitionDelay: `${(i % 4) * 0.07}s` }}>
               <div style={{
                 width: 40, height: 40, borderRadius: 10,
                 background: `${cap.color}18`,
@@ -44,19 +42,19 @@ function DSSCapabilities() {
 
 function DSSHowItWorks() {
   const steps = window.DSS.howItWorks;
+  const u = window.DSS.ui.howItWorks;
   return (
     <section id="cara-kerja" style={{ background: 'white', padding: '96px 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
         <div style={{ textAlign: 'center', marginBottom: 56 }} className="reveal">
-          <div className="section-label" style={{ marginBottom: 12 }}>CARA MULAI</div>
+          <div className="section-label" style={{ marginBottom: 12 }}>{u.label}</div>
           <h2 style={{
             fontFamily: 'var(--font-head)', fontSize: 'clamp(26px, 3vw, 38px)',
             fontWeight: 700, color: 'var(--navy)', letterSpacing: '-0.02em',
-          }}>Dari Demo ke Sistem Berjalan</h2>
+          }}>{u.h2}</h2>
         </div>
 
         <div style={{ position: 'relative' }}>
-          {/* Connector line (desktop) */}
           <div style={{
             position: 'absolute', top: 28, left: '12.5%', right: '12.5%', height: 2,
             background: 'repeating-linear-gradient(90deg, var(--amber-200) 0, var(--amber-200) 8px, transparent 8px, transparent 16px)',
@@ -94,10 +92,10 @@ function DSSHowItWorks() {
           background: 'var(--bg-gray)', borderRadius: 10,
           fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--body)', lineHeight: 1.6,
         }}>
-          Butuh solusi kustom di luar produk ini? →{' '}
+          {u.customNote}
           <a href="https://digdayasolusi.co.id" target="_blank" rel="noopener"
             style={{ color: 'var(--blue)', fontWeight: 600, textDecoration: 'none' }}>
-            Lihat layanan PT Digdaya Solusi Sistem (digdayasolusi.co.id)
+            {u.customLink}
           </a>
         </div>
       </div>

@@ -1,6 +1,7 @@
 // DSS Industria — Healthcare Products Section
 function HealthcareCard({ product, onOpen, fullWidth }) {
   const [hovered, setHovered] = React.useState(false);
+  const u = window.DSS.ui.cards;
   return (
     <div
       className="card"
@@ -17,7 +18,7 @@ function HealthcareCard({ product, onOpen, fullWidth }) {
         {fullWidth && (
           <button onClick={() => onOpen(product)}
             style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: 12, color: 'var(--teal)', display: 'flex', alignItems: 'center', gap: 4 }}>
-            ▶ Tonton Video Demo (2 menit)
+            {u.tonton}
           </button>
         )}
       </div>
@@ -36,24 +37,23 @@ function HealthcareCard({ product, onOpen, fullWidth }) {
           background: '#CCFBF1', color: '#134E4A',
           border: '1px solid #99F6E4',
           borderRadius: 100, padding: '5px 12px',
-          fontFamily: 'var(--font-mono)', fontSize: 11,
-          marginBottom: 20,
+          fontFamily: 'var(--font-mono)', fontSize: 11, marginBottom: 20,
         }}>
           ◎ {product.chip}
         </div>
       )}
       {!fullWidth && (
         <button onClick={() => onOpen(product)} className="btn btn-outline btn-sm" style={{ width: '100%', justifyContent: 'center' }}>
-          Lihat Detail & Syarat Pilot
+          {u.demoLabel}
         </button>
       )}
       {fullWidth && (
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 8 }}>
           <button onClick={() => onOpen(product)} className="btn btn-outline btn-sm">
-            Lihat Detail
+            {u.detail}
           </button>
           <a href={window.DSS.healthcare.waUrl} target="_blank" rel="noopener" className="btn btn-primary btn-sm">
-            Hubungi via WhatsApp
+            {u.hubungi}
           </a>
         </div>
       )}
@@ -63,8 +63,8 @@ function HealthcareCard({ product, onOpen, fullWidth }) {
 
 function DSSProductsHealthcare() {
   const d = window.DSS.healthcare;
+  const u = window.DSS.ui.cards;
   const openModal = (p) => window.__dssOpenModal && window.__dssOpenModal(p);
-  const [hovered, setHovered] = React.useState(false);
   const smallCards = d.products.filter(p => !p.fullWidth);
   const wideCard   = d.products.find(p => p.fullWidth);
 
@@ -104,15 +104,14 @@ function DSSProductsHealthcare() {
           border: '1px solid rgba(20,184,166,0.2)',
           borderRadius: 14, padding: '20px 28px',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          gap: 16, flexWrap: 'wrap',
-          marginBottom: 24,
+          gap: 16, flexWrap: 'wrap', marginBottom: 24,
         }}>
           <p style={{ fontSize: 15, color: 'var(--navy)', fontWeight: 500 }}>
             {d.pilotCta} →
           </p>
           <a href={d.waUrl} target="_blank" rel="noopener" className="btn btn-primary btn-sm"
             style={{ background: 'var(--teal)', boxShadow: '0 4px 16px rgba(20,184,166,0.25)' }}>
-            Hubungi via WhatsApp
+            {u.hubungi}
           </a>
         </div>
 

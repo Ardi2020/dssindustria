@@ -1,25 +1,28 @@
 // DSS Industria — Main App
 const { useState, useEffect } = React;
 
-// Destructure all components from window (set by preceding scripts)
 const {
   ProductModal, DSSNav, DSSHero, DSSApproach,
   DSSProductsIndustri, DSSProductsHealthcare,
   DSSCapabilities, DSSHowItWorks,
-  DSSPricing, DSSAbout,
+  DSSDeliveryModel, DSSAbout,
   DSSCtaFinal, DSSFooter,
 } = window;
 
 function App() {
   const [activeModal, setActiveModal] = useState(null);
+  const [lang, setLang] = useState('id');
 
-  // Expose modal opener globally so child components can call it
   useEffect(() => {
-    window.__dssOpenModal = (product) => setActiveModal(product);
+    window.__dssOpenModal  = (product) => setActiveModal(product);
     window.__dssCloseModal = () => setActiveModal(null);
+    window.__dssSetLang    = (l) => {
+      window.DSS = window.DSS_DATA[l];
+      setLang(l);
+    };
   }, []);
 
-  // Global reveal-on-scroll observer
+  // Re-run reveal observer after lang switch (new DOM text, same elements)
   useEffect(() => {
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -31,20 +34,20 @@ function App() {
     scan();
     const t = setInterval(scan, 300);
     return () => { obs.disconnect(); clearInterval(t); };
-  }, []);
+  }, [lang]);
 
   return (
     <>
-      <DSSNav />
+      <DSSNav lang={lang} />
 
       <main>
-        <DSSHero />
+        <DSSHero key={lang} />
         <DSSApproach />
         <DSSProductsIndustri />
         <DSSProductsHealthcare />
         <DSSCapabilities />
         <DSSHowItWorks />
-        <DSSPricing />
+        <DSSDeliveryModel />
         <DSSAbout />
         <DSSCtaFinal />
       </main>
@@ -61,7 +64,6 @@ function App() {
         <span className="wa-label">WhatsApp</span>
       </a>
 
-      {/* Modal */}
       {activeModal && (
         <ProductModal product={activeModal} onClose={() => setActiveModal(null)} />
       )}
