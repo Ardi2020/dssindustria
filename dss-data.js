@@ -215,7 +215,7 @@ window.DSS_DATA = {
       contact: {
         wa: '+62 821-8417-551',
         waUrl: 'https://wa.me/628218417551',
-        email: 'kontak.dssindustria@gmail.com',
+        email: 'kontak@digdayasolusi.co.id',
         location: 'Jakarta, Indonesia',
         hours: 'Senin–Jumat 08.00–17.00\nSabtu 09.00–13.00 WIB',
       },
@@ -469,7 +469,7 @@ window.DSS_DATA = {
       contact: {
         wa: '+62 821-8417-551',
         waUrl: 'https://wa.me/628218417551',
-        email: 'kontak.dssindustria@gmail.com',
+        email: 'kontak@digdayasolusi.co.id',
         location: 'Jakarta, Indonesia',
         hours: 'Mon–Fri 08:00–17:00\nSat 09:00–13:00 WIB',
       },
